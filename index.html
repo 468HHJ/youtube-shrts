@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viral Shorts</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+}
+body.light {
+    background: #f5f5f5;
+    color: #111;
+}
+.container {
+    padding: 50px 20px;
+}
+button {
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button.watchShorts {
+    background: red;
+    color: #fff;
+}
+button.themeToggle {
+    background: #555;
+    color: #fff;
+}
+.ad {
+    margin: 30px 0;
+    font-size: 14px;
+    color: #ff0;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>🔥 Viral Shorts</h1>
+    <p>Trending YouTube Shorts dekho</p>
+
+    <!-- Adsterra placeholder -->
+    <div class="ad">🔵 Adsterra Placeholder</div>
+
+    <!-- Buttons -->
+    <button class="watchShorts" onclick="openShorts()">▶ Watch Shorts</button>
+    <button class="themeToggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+</div>
+
+<script>
+function openShorts() {
+    // User ka Shorts page APK / WebView ke andar open
+    window.open("https://www.youtube.com/shorts", "_blank");
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('light');
+}
+</script>
+</body>
+</html>
