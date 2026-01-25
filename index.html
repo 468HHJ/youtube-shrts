@@ -4,24 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YT SHORTS - reels_kingo</title>
+
 <style>
-/* --- LIVE BACKGROUND & GLOBAL --- */
 body {
-  margin: 0; padding: 0;
+  margin: 0;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: #000; color: white;
-  display: flex; flex-direction: column; align-items: center;
-  overflow-x: hidden;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
 }
 
 .bg-animate {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  z-index: -1; background: radial-gradient(circle at 50% 50%, #1a1a1a, #000);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
 }
 
 .circle {
-  position: absolute; background: rgba(255, 0, 0, 0.15);
-  filter: blur(80px); border-radius: 50%;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,0,0,0.15);
+  filter: blur(80px);
+  border-radius: 50%;
   animation: move 20s infinite alternate;
 }
 
@@ -30,133 +37,147 @@ body {
   to { transform: translate(20%, 20%); }
 }
 
-.container { width: 100%; max-width: 400px; padding: 20px 15px; text-align: center; }
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
 
 h1 {
-  font-size: 3em; font-weight: 900; margin: 0;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-  animation: glow 2s infinite alternate;
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow: 0 0 20px red;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff0000; }
-  to { text-shadow: 0 0 30px #ff0000; }
-}
-
-/* --- TRENDING TAGS --- */
 .tags-container {
-    display: flex; overflow-x: auto; gap: 10px;
-    padding: 15px 0; width: 100%; scrollbar-width: none;
-}
-.tag {
-    background: rgba(255, 255, 255, 0.1); padding: 8px 15px;
-    border-radius: 20px; font-size: 12px; white-space: nowrap;
-    border: 1px solid rgba(255,255,255,0.2); font-weight: bold;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 15px 0;
 }
 
-/* --- INSTAGRAM BOX --- */
+.tag {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 .insta-box {
-  margin-bottom: 20px; padding: 15px;
-  background: rgba(255, 255, 255, 0.05); border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
 }
 
 .insta-btn {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  color: white; text-decoration: none; font-weight: bold;
-  padding: 10px 20px; border-radius: 50px;
-  display: inline-flex; align-items: center; gap: 8px;
-  animation: pulse-insta 2s infinite;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-@keyframes pulse-insta { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px 0;
+}
 
-/* --- MAIN BUTTONS --- */
-.btn-group { display: flex; flex-direction: column; gap: 20px; margin: 20px 0; }
 .btn {
-  width: 100%; height: 65px; border: none; border-radius: 50px;
-  font-size: 1.1rem; font-weight: 800; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 12px;
+  height: 65px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.watch-shorts { background: linear-gradient(90deg, #ff0000, #ff4d4d); color: white; animation: p-red 2s infinite; }
-.watch-full { background: #fff; color: #000; animation: p-white 2.5s infinite; }
+.watch-shorts {
+  background: linear-gradient(90deg,#ff0000,#ff4d4d);
+  color: #fff;
+}
 
-@keyframes p-red { 0%, 100% { transform: scale(1); box-shadow: 0 0 10px #ff0000; } 50% { transform: scale(1.03); box-shadow: 0 0 20px #ff0000; } }
-@keyframes p-white { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); box-shadow: 0 0 15px #fff; } }
+.watch-full {
+  background: #fff;
+  color: #000;
+}
 
-/* --- SHARE BUTTON --- */
 .share-btn {
-    background: #25D366; color: white; padding: 12px 25px;
-    border-radius: 50px; text-decoration: none; font-weight: bold;
-    display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.ad-box { background: rgba(255, 255, 255, 0.05); border-radius: 15px; margin: 15px 0; padding: 10px; min-height: 50px; }
-.footer { font-size: 0.8em; opacity: 0.4; margin-top: 30px; }
+.footer {
+  margin-top: 30px;
+  font-size: 0.8em;
+  opacity: 0.4;
+}
 </style>
 </head>
+
 <body>
 
 <div class="bg-animate">
-    <div class="circle" style="width: 300px; height: 300px; top: 10%; left: 10%;"></div>
-    <div class="circle" style="width: 250px; height: 250px; bottom: 15%; right: 5%; background: rgba(255,255,255,0.05);"></div>
+  <div class="circle" style="top:10%;left:10%"></div>
 </div>
 
 <div class="container">
   <h1>VIRAL</h1>
-  <p style="margin-top:-5px; letter-spacing: 5px; font-weight: bold; color: #ff0000;">LIVE SHORTS</p>
+  <p style="letter-spacing:5px;color:red;font-weight:bold;">LIVE SHORTS</p>
 
   <div class="tags-container">
-      <div class="tag" onclick="searchYT('Funny Shorts')">#FUNNY 😂</div>
-      <div class="tag" onclick="searchYT('Gaming Shorts')">#GAMING 🎮</div>
-      <div class="tag" onclick="searchYT('Cricket Shorts')">#CRICKET 🏏</div>
-      <div class="tag" onclick="searchYT('Motivation')">#MOTIVATION 💪</div>
+    <div class="tag" onclick="searchYT('Funny Shorts')">#FUNNY 😂</div>
+    <div class="tag" onclick="searchYT('Gaming Shorts')">#GAMING 🎮</div>
+    <div class="tag" onclick="searchYT('Cricket Shorts')">#CRICKET 🏏</div>
+    <div class="tag" onclick="searchYT('Motivation')">#MOTIVATION 💪</div>
   </div>
 
   <div class="insta-box">
-    <a href="https://www.instagram.com/reels_kingo?igsh=MTZxemFqemZhbzdvaw==" target="_blank" class="insta-btn">
+    <a class="insta-btn" target="_blank"
+      href="https://www.instagram.com/reels_kingo">
       Follow @reels_kingo
     </a>
   </div>
 
-  <div class="ad-box">
-    <script async data-cfasync="false" src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js"></script>
-    <div id="container-35280c480a2fbece44e06bebe674c93d"></div>
-  </div>
-
   <div class="btn-group">
-      <button class="btn watch-shorts" onclick="vibrateAndGo('shorts')">
-          <span>🔥</span> WATCH SHORTS
-      </button>
-      <button class="btn watch-full" onclick="vibrateAndGo('home')">
-          <span>📺</span> PRIVATE YOUTUBE OPEN
-      </button>
+    <button class="btn watch-shorts"
+      onclick="go('https://www.youtube.com/shorts')">
+      🔥 WATCH SHORTS
+    </button>
+
+    <button class="btn watch-full"
+      onclick="go('https://www.youtube.com')">
+      📺 PRIVATE YOUTUBE OPEN
+    </button>
   </div>
 
-  <a href="whatsapp://send?text=Bhai ye mast Shorts App check kar: https://astonishing-monstera-0272c0.netlify.app/" class="share-btn">
-      📤 SHARE WITH FRIENDS
+  <a class="share-btn"
+     href="whatsapp://send?text=Check this Shorts App 👉 https://astonishing-monstera-0272c0.netlify.app/">
+    📤 SHARE WITH FRIENDS
   </a>
 
-  <div class="ad-box">
-    <script src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js"></script>
-  </div>
-
   <div class="footer">
-    <p>© 2026 reels_kingo • V3.0 Ultra</p>
+    © 2026 reels_kingo • Clean Version
   </div>
 </div>
 
 <script>
-function vibrateAndGo(type){
-  if (navigator.vibrate) navigator.vibrate(40);
-  setTimeout(() => {
-    window.location.href = (type === 'shorts') ? "https://www.youtube.com/shorts" : "https://www.youtube.com";
-  }, 200);
+function go(url){
+  if(navigator.vibrate) navigator.vibrate(40);
+  setTimeout(()=>location.href=url,150);
 }
-function searchYT(q) {
-  if (navigator.vibrate) navigator.vibrate(30);
-  window.location.href = "https://www.youtube.com/results?search_query=" + q;
+
+function searchYT(q){
+  location.href="https://www.youtube.com/results?search_query="+q;
 }
 </script>
 
