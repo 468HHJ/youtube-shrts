@@ -113,11 +113,27 @@ body{
   <!-- ===== CARD START ===== -->
   <div class="card">
 
+    <!-- AD 1 : TOP BANNER -->
+    <div class="ad-box">
+      <!-- Safe placeholder for banner ad -->
+      <div style="width:320px; height:50px; background:#333; display:flex; align-items:center; justify-content:center; color:#fff;">
+        TOP BANNER AD
+      </div>
+    </div>
+
     <!-- BUTTON -->
     <button class="btn btn-red"
       onclick="goToUrl('https://www.youtube.com/shorts')">
       🔥 WATCH SHORTS
     </button>
+
+    <!-- AD 2 : BOTTOM BANNER -->
+    <div class="ad-box">
+      <!-- Safe placeholder for banner ad -->
+      <div style="width:320px; height:50px; background:#333; display:flex; align-items:center; justify-content:center; color:#fff;">
+        BOTTOM BANNER AD
+      </div>
+    </div>
 
     <!-- BUTTON -->
     <button class="btn btn-white"
@@ -132,7 +148,7 @@ body{
 </div>
 
 <script>
-// Simple function to go directly to URL without auto ad
+// Simple function to go directly to URL
 function goToUrl(url){
   location.href = url;
 }
