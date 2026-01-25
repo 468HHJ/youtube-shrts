@@ -3,181 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YT SHORTS - reels_kingo</title>
+<title>Viral Shorts – reels_kingo</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background: #000;
-  color: #fff;
-  display: flex;
-  justify-content: center;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Roboto,sans-serif;
+  background:#060606;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+}
+.neon-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,0,0,.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,.08), transparent 40%),
+    #000;
+}
+.container{
+  width:100%;
+  max-width:420px;
+  padding:18px;
+  text-align:center;
 }
 
-.bg-animate {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at center, #1a1a1a, #000);
+.logo{
+  font-size:3.2em;
+  font-weight:900;
+  color:#ff2b2b;
+  text-shadow:0 0 15px #ff0000,0 0 40px rgba(255,0,0,.6);
+}
+.sub{
+  letter-spacing:6px;
+  font-weight:bold;
+  margin-top:-6px;
+  color:#ff6a6a;
 }
 
-.circle {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(255,0,0,0.15);
-  filter: blur(80px);
-  border-radius: 50%;
-  animation: move 20s infinite alternate;
+/* glass card */
+.card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+  backdrop-filter:blur(10px);
+  border-radius:22px;
+  padding:15px;
+  margin:18px 0;
+  box-shadow:0 0 25px rgba(255,0,0,.15);
 }
 
-@keyframes move {
-  from { transform: translate(-20%, -20%); }
-  to { transform: translate(20%, 20%); }
+/* buttons */
+.btn{
+  width:100%;
+  height:64px;
+  border:none;
+  border-radius:50px;
+  font-size:1.1rem;
+  font-weight:800;
+  cursor:pointer;
+  margin:12px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.btn-red{
+  background:linear-gradient(90deg,#ff0000,#ff4d4d);
+  color:#fff;
+  box-shadow:0 0 20px rgba(255,0,0,.6);
+  animation:pulse 2s infinite;
+}
+.btn-white{
+  background:#fff;
+  color:#000;
+  box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.04)}
 }
 
-.container {
-  max-width: 400px;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
+/* ads */
+.ad-box{
+  margin:15px 0;
+  display:flex;
+  justify-content:center;
 }
 
-h1 {
-  font-size: 3em;
-  font-weight: 900;
-  text-shadow: 0 0 20px red;
-}
-
-.tags-container {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 15px 0;
-}
-
-.tag {
-  padding: 8px 15px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.1);
-  font-size: 12px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.insta-box {
-  margin: 20px 0;
-}
-
-.insta-btn {
-  padding: 12px 25px;
-  border-radius: 50px;
-  background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.btn {
-  height: 65px;
-  border-radius: 50px;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.watch-shorts {
-  background: linear-gradient(90deg,#ff0000,#ff4d4d);
-  color: #fff;
-}
-
-.watch-full {
-  background: #fff;
-  color: #000;
-}
-
-.share-btn {
-  margin-top: 10px;
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.footer {
-  margin-top: 30px;
-  font-size: 0.8em;
-  opacity: 0.4;
+/* footer */
+.footer{
+  margin-top:25px;
+  font-size:12px;
+  opacity:.4;
 }
 </style>
 </head>
 
 <body>
-
-<div class="bg-animate">
-  <div class="circle" style="top:10%;left:10%"></div>
-</div>
+<div class="neon-bg"></div>
 
 <div class="container">
-  <h1>VIRAL</h1>
-  <p style="letter-spacing:5px;color:red;font-weight:bold;">LIVE SHORTS</p>
 
-  <div class="tags-container">
-    <div class="tag" onclick="searchYT('Funny Shorts')">#FUNNY 😂</div>
-    <div class="tag" onclick="searchYT('Gaming Shorts')">#GAMING 🎮</div>
-    <div class="tag" onclick="searchYT('Cricket Shorts')">#CRICKET 🏏</div>
-    <div class="tag" onclick="searchYT('Motivation')">#MOTIVATION 💪</div>
-  </div>
+  <div class="logo">VIRAL</div>
+  <div class="sub">LIVE SHORTS</div>
 
-  <div class="insta-box">
-    <a class="insta-btn" target="_blank"
-      href="https://www.instagram.com/reels_kingo">
-      Follow @reels_kingo
-    </a>
-  </div>
+  <!-- ===== CARD START ===== -->
+  <div class="card">
 
-  <div class="btn-group">
-    <button class="btn watch-shorts"
-      onclick="go('https://www.youtube.com/shorts')">
+    <!-- AD 1 : TOP BANNER -->
+    <div class="ad-box">
+      <script async data-cfasync="false"
+        src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js"></script>
+      <div id="container-35280c480a2fbece44e06bebe674c93d"></div>
+    </div>
+
+    <!-- BUTTON -->
+    <button class="btn btn-red"
+      onclick="goWithAd('https://www.youtube.com/shorts')">
       🔥 WATCH SHORTS
     </button>
 
-    <button class="btn watch-full"
-      onclick="go('https://www.youtube.com')">
+    <!-- AD 2 : 320x50 -->
+    <div class="ad-box">
+      <script>
+        atOptions={
+          'key':'bc6f229e12f49163778a5da597aeb6b8',
+          'format':'iframe',
+          'height':50,
+          'width':320,
+          'params':{}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js"></script>
+    </div>
+
+    <!-- BUTTON -->
+    <button class="btn btn-white"
+      onclick="goWithAd('https://www.youtube.com')">
       📺 PRIVATE YOUTUBE OPEN
     </button>
-  </div>
 
-  <a class="share-btn"
-     href="whatsapp://send?text=Check this Shorts App 👉 https://astonishing-monstera-0272c0.netlify.app/">
-    📤 SHARE WITH FRIENDS
-  </a>
-
-  <div class="footer">
-    © 2026 reels_kingo • Clean Version
   </div>
+  <!-- ===== CARD END ===== -->
+
+  <!-- POP / AUTO ADS -->
+  <script src="https://pl28546015.effectivegatecpm.com/e7/2f/44/e72f442a55ad8fb0c9a809637b8e7d6a.js"></script>
+  <script src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js"></script>
+
+  <div class="footer">© 2026 reels_kingo • Neon Edition</div>
 </div>
 
 <script>
-function go(url){
-  if(navigator.vibrate) navigator.vibrate(40);
-  setTimeout(()=>location.href=url,150);
-}
-
-function searchYT(q){
-  location.href="https://www.youtube.com/results?search_query="+q;
+function goWithAd(url){
+  window.open(
+    "https://www.effectivegatecpm.com/svun522eu?key=651fe129ef7cb4e917966f85bc6926ca",
+    "_blank"
+  );
+  setTimeout(()=>{location.href=url},500);
 }
 </script>
 
