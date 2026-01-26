@@ -15,6 +15,7 @@ body{
   display:flex;
   justify-content:center;
 }
+
 .neon-bg{
   position:fixed;
   inset:0;
@@ -24,62 +25,78 @@ body{
     radial-gradient(circle at 80% 80%, rgba(255,255,255,.08), transparent 40%),
     #000;
 }
+
 .container{
   width:100%;
   max-width:420px;
   padding:18px;
   text-align:center;
 }
+
 .logo{
-  font-size:3.2em;
+  font-size:3.4em;
   font-weight:900;
   color:#ff2b2b;
-  text-shadow:0 0 15px #ff0000,0 0 40px rgba(255,0,0,.6);
+  text-shadow:0 0 20px #ff0000;
 }
+
 .sub{
   letter-spacing:6px;
   font-weight:bold;
   margin-top:-6px;
   color:#ff6a6a;
 }
+
+/* glass card */
 .card{
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.15);
-  backdrop-filter:blur(10px);
-  border-radius:22px;
-  padding:15px;
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:18px;
   margin:18px 0;
-  box-shadow:0 0 25px rgba(255,0,0,.15);
 }
+
+/* BIG BUTTONS */
 .btn{
   width:100%;
-  height:64px;
+  height:76px;
   border:none;
-  border-radius:50px;
-  font-size:1.1rem;
-  font-weight:800;
+  border-radius:60px;
+  font-size:1.25rem;
+  font-weight:900;
   cursor:pointer;
-  margin:12px 0;
+  margin:14px 0;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:12px;
+  transition:transform .2s;
 }
+
+.btn:active{
+  transform:scale(0.95);
+}
+
 .btn-red{
   background:linear-gradient(90deg,#ff0000,#ff4d4d);
   color:#fff;
-  box-shadow:0 0 20px rgba(255,0,0,.6);
-  animation:pulse 2s infinite;
+  box-shadow:0 0 25px rgba(255,0,0,.8);
+  animation:pulse 1.8s infinite;
 }
+
 .btn-white{
   background:#fff;
   color:#000;
-  box-shadow:0 0 20px rgba(255,255,255,.4);
+  box-shadow:0 0 20px rgba(255,255,255,.5);
 }
+
 @keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.04)}
+  0%{box-shadow:0 0 20px red}
+  50%{box-shadow:0 0 40px red}
+  100%{box-shadow:0 0 20px red}
 }
+
 .footer{
   margin-top:25px;
   font-size:12px;
@@ -92,26 +109,28 @@ body{
 <div class="neon-bg"></div>
 
 <div class="container">
+
   <div class="logo">VIRAL</div>
   <div class="sub">LIVE SHORTS</div>
 
   <div class="card">
 
-    <!-- 🔥 SMART LINK BUTTON -->
+    <!-- WATCH SHORTS -->
     <button class="btn btn-red"
-      onclick="location.href='https://www.effectivegatecpm.com/svun522eu?key=651fe129ef7cb4e917966f85bc6926ca'">
+      onclick="goToUrl('https://www.youtube.com/shorts')">
       🔥 WATCH VIRAL SHORTS
     </button>
 
-    <!-- NORMAL YOUTUBE BUTTON -->
+    <!-- OPEN YOUTUBE -->
     <button class="btn btn-white"
-      onclick="location.href='https://www.youtube.com'">
+      onclick="goToUrl('https://www.youtube.com')">
       📺 OPEN YOUTUBE
     </button>
 
     <!-- MID PAGE AD -->
     <div id="container-35280c480a2fbece44e06bebe674c93d"
-         style="margin:15px auto; text-align:center;"></div>
+         style="margin:15px auto;">
+    </div>
 
     <script async data-cfasync="false"
       src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js">
@@ -119,21 +138,30 @@ body{
 
   </div>
 
-  <!-- BOTTOM BANNER AD -->
-  <div style="margin:15px 0; display:flex; justify-content:center;">
-    <script>
-      atOptions = {
-        'key' : 'bc6f229e12f49163778a5da597aeb6b8',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-      };
-    </script>
-    <script src="https://www.highperformanceformat.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js"></script>
-  </div>
+  <!-- SMART / POP ADS -->
+  <script src="https://pl28546015.effectivegatecpm.com/e7/2f/44/e72f442a55ad8fb0c9a809637b8e7d6a.js"></script>
+  <script src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js"></script>
+
+  <!-- BOTTOM BANNER -->
+  <script>
+    atOptions = {
+      'key' : 'bc6f229e12f49163778a5da597aeb6b8',
+      'format' : 'iframe',
+      'height' : 50,
+      'width' : 320,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js"></script>
 
   <div class="footer">© 2026 reels_kingo</div>
 </div>
+
+<script>
+function goToUrl(url){
+  location.href = url;
+}
+</script>
+
 </body>
 </html>
