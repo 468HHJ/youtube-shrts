@@ -3,163 +3,906 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viral Shorts – reels_kingo</title>
+
+<title>Viral Hub</title>
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Segoe UI',Roboto,sans-serif;
-  background:#060606;
-  color:#fff;
-  display:flex;
-  justify-content:center;
+*{
+  box-sizing:border-box;
 }
 
-.neon-bg{
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background:#030303;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+
+/* =====================================================
+   ANIMATED BACKGROUND
+   ===================================================== */
+
+.background{
   position:fixed;
   inset:0;
-  z-index:-1;
+  overflow:hidden;
+  z-index:-5;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255,0,0,.25), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(255,255,255,.08), transparent 40%),
-    #000;
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,0,0,.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255,40,40,.13),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #050505,
+      #0b0000,
+      #020202
+    );
 }
 
-.container{
+
+/* floating lights */
+
+.light{
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,0,0,.08);
+  filter:blur(45px);
+  animation:float 8s infinite alternate ease-in-out;
+}
+
+.light.one{
+  top:10%;
+  left:-50px;
+}
+
+.light.two{
+  right:-50px;
+  bottom:15%;
+  animation-delay:2s;
+}
+
+@keyframes float{
+
+  from{
+    transform:translateY(0) scale(1);
+  }
+
+  to{
+    transform:translateY(-60px) scale(1.25);
+  }
+
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.wrapper{
   width:100%;
-  max-width:420px;
-  padding:18px;
-  text-align:center;
+  max-width:520px;
+  margin:auto;
+  padding:20px;
 }
 
-.logo{
-  font-size:3.4em;
-  font-weight:900;
-  color:#ff2b2b;
-  text-shadow:0 0 20px #ff0000;
+
+/* =====================================================
+   TOP BAR
+   ===================================================== */
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
 }
 
-.sub{
-  letter-spacing:6px;
-  font-weight:bold;
-  margin-top:-6px;
-  color:#ff6a6a;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-/* glass card */
-.card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.15);
-  backdrop-filter:blur(12px);
-  border-radius:24px;
-  padding:18px;
-  margin:18px 0;
-}
+.brand-icon{
+  width:42px;
+  height:42px;
+  border-radius:14px;
 
-/* BIG BUTTONS */
-.btn{
-  width:100%;
-  height:76px;
-  border:none;
-  border-radius:60px;
-  font-size:1.25rem;
-  font-weight:900;
-  cursor:pointer;
-  margin:14px 0;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
-  transition:transform .2s;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff0000,
+      #700000
+    );
+
+  box-shadow:
+    0 0 25px rgba(255,0,0,.45);
+
+  font-size:20px;
 }
 
-.btn:active{
-  transform:scale(0.95);
+.brand-name{
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:1px;
 }
 
-.btn-red{
-  background:linear-gradient(90deg,#ff0000,#ff4d4d);
+.live{
+  font-size:10px;
+  padding:6px 10px;
+  border-radius:20px;
+
+  background:rgba(255,0,0,.12);
+  border:1px solid rgba(255,0,0,.35);
+
+  color:#ff5b5b;
+  font-weight:900;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero{
+  text-align:center;
+  padding:25px 0 20px;
+}
+
+.hero-logo{
+  font-size:
+    clamp(
+      3.2rem,
+      14vw,
+      5.5rem
+    );
+
+  line-height:.9;
+
+  font-weight:1000;
+
+  letter-spacing:-4px;
+
   color:#fff;
-  box-shadow:0 0 25px rgba(255,0,0,.8);
-  animation:pulse 1.8s infinite;
+
+  text-shadow:
+    0 0 10px rgba(255,0,0,.7),
+    0 0 35px rgba(255,0,0,.45);
 }
 
-.btn-white{
+.hero-logo span{
+  color:#ff1717;
+}
+
+.hero-sub{
+  margin-top:15px;
+
+  color:#888;
+
+  font-size:12px;
+
+  letter-spacing:5px;
+
+  font-weight:700;
+}
+
+
+/* =====================================================
+   GLASS PANEL
+   ===================================================== */
+
+.panel{
+  position:relative;
+
+  padding:25px 20px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.09),
+      rgba(255,255,255,.025)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.5),
+
+    inset 0 1px 0
+    rgba(255,255,255,.08);
+
+  backdrop-filter:
+    blur(20px);
+}
+
+
+/* top shine */
+
+.panel:before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:15%;
+  right:15%;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,0,0,.7),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.status{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  margin-bottom:22px;
+
+  color:#aaa;
+
+  font-size:12px;
+}
+
+.status-dot{
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:#ff1b1b;
+
+  box-shadow:
+    0 0 12px #ff0000;
+
+  animation:
+    blink 1.2s infinite;
+}
+
+@keyframes blink{
+
+  0%,100%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.3;
+  }
+
+}
+
+
+/* =====================================================
+   MAIN YOUTUBE BUTTON
+   ===================================================== */
+
+.youtube-button{
+
+  position:relative;
+
+  width:100%;
+  height:82px;
+
+  border:0;
+
+  border-radius:24px;
+
+  cursor:pointer;
+
+  overflow:hidden;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      110deg,
+      #ff0000,
+      #d50000,
+      #ff2525
+    );
+
+  box-shadow:
+    0 15px 40px
+    rgba(255,0,0,.35);
+
+  transition:
+    transform .2s,
+    box-shadow .2s;
+}
+
+.youtube-button:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 20px 55px
+    rgba(255,0,0,.55);
+
+}
+
+.youtube-button:active{
+
+  transform:
+    scale(.97);
+
+}
+
+
+/* button shine */
+
+.youtube-button:after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:50%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+
+  transform:skewX(-20deg);
+
+  animation:
+    shine 3s infinite;
+}
+
+@keyframes shine{
+
+  0%{
+    left:-100%;
+  }
+
+  45%{
+    left:130%;
+  }
+
+  100%{
+    left:130%;
+  }
+
+}
+
+
+/* button content */
+
+.button-content{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:15px;
+
+}
+
+.play-icon{
+
+  width:46px;
+  height:46px;
+
+  border-radius:15px;
+
   background:#fff;
-  color:#000;
-  box-shadow:0 0 20px rgba(255,255,255,.5);
+
+  color:#ff0000;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:21px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.25);
 }
 
-@keyframes pulse{
-  0%{box-shadow:0 0 20px red}
-  50%{box-shadow:0 0 40px red}
-  100%{box-shadow:0 0 20px red}
+.button-text{
+  text-align:left;
 }
+
+.button-title{
+
+  font-size:19px;
+
+  font-weight:1000;
+
+}
+
+.button-sub{
+
+  font-size:10px;
+
+  opacity:.75;
+
+  margin-top:3px;
+
+}
+
+
+/* =====================================================
+   SMALL OPTIONS
+   ===================================================== */
+
+.options{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:12px;
+
+  margin-top:12px;
+}
+
+.option{
+
+  min-height:70px;
+
+  border-radius:20px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  background:
+    rgba(255,255,255,.045);
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:9px;
+
+  font-weight:800;
+
+  font-size:13px;
+}
+
+.option:hover{
+
+  background:
+    rgba(255,255,255,.08);
+
+  border-color:
+    rgba(255,0,0,.4);
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* =====================================================
+   INFO
+   ===================================================== */
+
+.info{
+
+  text-align:center;
+
+  margin-top:22px;
+
+  color:#777;
+
+  font-size:11px;
+
+  line-height:1.6;
+}
+
+
+/* =====================================================
+   AD AREA
+   ===================================================== */
+
+.ad-box{
+
+  margin-top:18px;
+
+  padding:10px;
+
+  min-height:60px;
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.025);
+
+  border:
+    1px solid
+    rgba(255,255,255,.06);
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 .footer{
+
+  text-align:center;
+
   margin-top:25px;
-  font-size:12px;
-  opacity:.4;
+
+  color:#444;
+
+  font-size:10px;
+
+  letter-spacing:1px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media(max-width:420px){
+
+  .wrapper{
+    padding:14px;
+  }
+
+  .panel{
+    padding:20px 15px;
+  }
+
+  .youtube-button{
+    height:76px;
+  }
+
+  .button-title{
+    font-size:17px;
+  }
+
 }
 </style>
 </head>
 
+
 <body>
-<div class="neon-bg"></div>
 
-<div class="container">
 
-  <div class="logo">VIRAL</div>
-  <div class="sub">LIVE SHORTS</div>
+<!-- BACKGROUND -->
 
-  <div class="card">
+<div class="background">
 
-    <!-- WATCH SHORTS -->
-    <button class="btn btn-red"
-      onclick="goToUrl('https://www.youtube.com/shorts')">
-      🔥 WATCH VIRAL SHORTS
-    </button>
+  <div class="light one"></div>
+  <div class="light two"></div>
 
-    <!-- OPEN YOUTUBE -->
-    <button class="btn btn-white"
-      onclick="goToUrl('https://www.youtube.com')">
-      📺 OPEN YOUTUBE
-    </button>
+</div>
 
-    <!-- MID PAGE AD -->
-    <div id="container-35280c480a2fbece44e06bebe674c93d"
-         style="margin:15px auto;">
+
+<div class="wrapper">
+
+
+<!-- TOP -->
+
+<div class="topbar">
+
+  <div class="brand">
+
+    <div class="brand-icon">
+      ▶
     </div>
 
-    <script async data-cfasync="false"
-      src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js">
-    </script>
+    <div class="brand-name">
+      WEBTUBE
+    </div>
 
   </div>
 
-  <!-- SMART / POP ADS -->
-  <script src="https://pl28546015.effectivegatecpm.com/e7/2f/44/e72f442a55ad8fb0c9a809637b8e7d6a.js"></script>
-  <script src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js"></script>
+  <div class="live">
+    ● ONLINE
+  </div>
 
-  <!-- BOTTOM BANNER -->
-  <script>
-    atOptions = {
-      'key' : 'bc6f229e12f49163778a5da597aeb6b8',
-      'format' : 'iframe',
-      'height' : 50,
-      'width' : 320,
-      'params' : {}
-    };
-  </script>
- 
-  <div class="footer">© 2026 reels_kingo</div>
 </div>
 
+
+<!-- HERO -->
+
+<div class="hero">
+
+  <div class="hero-logo">
+    W<span>T</span>
+  </div>
+
+  <div class="hero-sub">
+    YOUR VIDEO GATEWAY
+  </div>
+
+</div>
+
+
+<!-- MAIN PANEL -->
+
+<div class="panel">
+
+
+  <div class="status">
+
+    <span class="status-dot"></span>
+
+    YouTube Web Access
+
+  </div>
+
+
+  <!-- OPEN YOUTUBE -->
+
+  <button
+    class="youtube-button"
+    onclick="openYouTube()"
+  >
+
+    <div class="button-content">
+
+      <div class="play-icon">
+        ▶
+      </div>
+
+      <div class="button-text">
+
+        <div class="button-title">
+          OPEN YOUTUBE
+        </div>
+
+        <div class="button-sub">
+          Continue to YouTube Web
+        </div>
+
+      </div>
+
+    </div>
+
+  </button>
+
+
+  <!-- OTHER OPTIONS -->
+
+  <div class="options">
+
+
+    <button
+      class="option"
+      onclick="openShorts()"
+    >
+
+      🔥
+
+      <span>
+        YouTube Shorts
+      </span>
+
+    </button>
+
+
+    <button
+      class="option"
+      onclick="openBGH()"
+    >
+
+      ⭐
+
+      <span>
+        BGH-1M Channel
+      </span>
+
+    </button>
+
+
+  </div>
+
+
+  <div class="info">
+
+    YouTube videos are opened directly on
+    the official YouTube website.
+
+  </div>
+
+
+  <!-- YOUR OLD MID AD -->
+
+  <div class="ad-box">
+
+    <div
+      id="container-35280c480a2fbece44e06bebe674c93d">
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+  © 2026 WEBTUBE • SMART VIDEO GATEWAY
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     OLD AD CODE
+     ===================================================== -->
+
+
+<script
+async
+data-cfasync="false"
+src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js">
+</script>
+
+
+<!-- SMART / POP ADS -->
+
+<script
+src="https://pl28546015.effectivegatecpm.com/e7/2f/44/e72f442a55ad8fb0c9a809637b8e7d6a.js">
+</script>
+
+
+<script
+src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js">
+</script>
+
+
+<!-- BOTTOM BANNER -->
+
 <script>
-function goToUrl(url){
-  location.href = url;
+
+atOptions = {
+
+  'key':
+  'bc6f229e12f49163778a5da597aeb6b8',
+
+  'format':
+  'iframe',
+
+  'height':
+  50,
+
+  'width':
+  320,
+
+  'params':{}
+
+};
+
+</script>
+
+
+<script
+src="//www.effectivegatecpm.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js">
+</script>
+
+
+<!-- =====================================================
+     BUTTON FUNCTIONS
+     ===================================================== -->
+
+<script>
+
+function openYouTube(){
+
+  /*
+    Direct YouTube Web
+    New browser tab
+  */
+
+  window.open(
+    "https://www.youtube.com/",
+    "_blank",
+    "noopener,noreferrer"
+  );
+
 }
+
+
+function openShorts(){
+
+  window.open(
+    "https://www.youtube.com/shorts",
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+function openBGH(){
+
+  window.open(
+    "https://www.youtube.com/@bgh-1m",
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+</script>
 
 
 </body>
