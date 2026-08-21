@@ -40,6 +40,7 @@ body{
   inset:0;
   overflow:hidden;
   z-index:-5;
+
   background:
     radial-gradient(
       circle at 15% 20%,
@@ -59,17 +60,18 @@ body{
     );
 }
 
-
-/* floating lights */
-
 .light{
   position:absolute;
   width:180px;
   height:180px;
   border-radius:50%;
+
   background:rgba(255,0,0,.08);
+
   filter:blur(45px);
-  animation:float 8s infinite alternate ease-in-out;
+
+  animation:
+    float 8s infinite alternate ease-in-out;
 }
 
 .light.one{
@@ -155,13 +157,19 @@ body{
 
 .live{
   font-size:10px;
+
   padding:6px 10px;
+
   border-radius:20px;
 
   background:rgba(255,0,0,.12);
-  border:1px solid rgba(255,0,0,.35);
+
+  border:
+    1px solid
+    rgba(255,0,0,.35);
 
   color:#ff5b5b;
+
   font-weight:900;
 }
 
@@ -246,9 +254,6 @@ body{
     blur(20px);
 }
 
-
-/* top shine */
-
 .panel:before{
   content:"";
 
@@ -276,7 +281,9 @@ body{
 
 .status{
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   gap:8px;
@@ -317,7 +324,7 @@ body{
 
 
 /* =====================================================
-   MAIN YOUTUBE BUTTON
+   YOUTUBE BUTTON
    ===================================================== */
 
 .youtube-button{
@@ -372,9 +379,6 @@ body{
 
 }
 
-
-/* button shine */
-
 .youtube-button:after{
 
   content:"";
@@ -416,9 +420,6 @@ body{
   }
 
 }
-
-
-/* button content */
 
 .button-content{
 
@@ -479,12 +480,11 @@ body{
   opacity:.75;
 
   margin-top:3px;
-
 }
 
 
 /* =====================================================
-   SMALL OPTIONS
+   OPTIONS
    ===================================================== */
 
 .options{
@@ -541,7 +541,6 @@ body{
 
   transform:
     translateY(-2px);
-
 }
 
 
@@ -589,6 +588,26 @@ body{
   justify-content:center;
 
   align-items:center;
+
+  overflow:hidden;
+}
+
+
+/* 468x60 BANNER */
+
+.ad-banner{
+
+  width:100%;
+
+  min-height:60px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  overflow:hidden;
 }
 
 
@@ -640,7 +659,9 @@ body{
 <body>
 
 
-<!-- BACKGROUND -->
+<!-- =====================================================
+     BACKGROUND
+     ===================================================== -->
 
 <div class="background">
 
@@ -653,7 +674,9 @@ body{
 <div class="wrapper">
 
 
-<!-- TOP -->
+<!-- =====================================================
+     TOP BAR
+     ===================================================== -->
 
 <div class="topbar">
 
@@ -676,7 +699,9 @@ body{
 </div>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
 <div class="hero">
 
@@ -691,7 +716,9 @@ body{
 </div>
 
 
-<!-- MAIN PANEL -->
+<!-- =====================================================
+     MAIN PANEL
+     ===================================================== -->
 
 <div class="panel">
 
@@ -705,7 +732,9 @@ body{
   </div>
 
 
-  <!-- OPEN YOUTUBE -->
+  <!-- ===================================================
+       OPEN YOUTUBE
+       =================================================== -->
 
   <button
     class="youtube-button"
@@ -735,7 +764,9 @@ body{
   </button>
 
 
-  <!-- OTHER OPTIONS -->
+  <!-- ===================================================
+       OPTIONS
+       =================================================== -->
 
   <div class="options">
 
@@ -779,7 +810,47 @@ body{
   </div>
 
 
-  <!-- YOUR OLD MID AD -->
+  <!-- ===================================================
+       NEW AD 1
+       468x60 BANNER
+       =================================================== -->
+
+  <div class="ad-box ad-banner">
+
+    <script>
+      atOptions = {
+        'key' : '35f62e9af96badc5916010773abc00d2',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+
+    <script
+      src="https://www.highperformanceformat.com/35f62e9af96badc5916010773abc00d2/invoke.js">
+    </script>
+
+  </div>
+
+
+  <!-- ===================================================
+       NEW AD 2
+       EFFECTIVE CPM CONTAINER
+       =================================================== -->
+
+  <div class="ad-box">
+
+    <div
+      id="container-a274477f31ed8971cbd4ca796df95960">
+    </div>
+
+  </div>
+
+
+  <!-- ===================================================
+       OLD MID AD
+       =================================================== -->
 
   <div class="ad-box">
 
@@ -793,7 +864,9 @@ body{
 </div>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <div class="footer">
 
@@ -806,30 +879,62 @@ body{
 
 
 <!-- =====================================================
+     NEW AD 2 SCRIPT
+     ===================================================== -->
+
+<script
+  async
+  data-cfasync="false"
+  src="https://pl30951395.effectivecpmnetwork.com/a274477f31ed8971cbd4ca796df95960/invoke.js">
+</script>
+
+
+<!-- =====================================================
+     NEW DIRECT / POP SCRIPT 1
+     ===================================================== -->
+
+<script
+  src="https://pl30951394.effectivecpmnetwork.com/bc/b9/bc/bcb9bcae919c97ae187c2153113a58b1.js">
+</script>
+
+
+<!-- =====================================================
+     NEW DIRECT / POP SCRIPT 2
+     ===================================================== -->
+
+<script
+  src="https://pl30951393.effectivecpmnetwork.com/56/ee/a1/56eea1324560581798f38941a6452d68.js">
+</script>
+
+
+<!-- =====================================================
      OLD AD CODE
      ===================================================== -->
 
-
 <script
-async
-data-cfasync="false"
-src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js">
+  async
+  data-cfasync="false"
+  src="https://pl28545996.effectivegatecpm.com/35280c480a2fbece44e06bebe674c93d/invoke.js">
 </script>
 
 
-<!-- SMART / POP ADS -->
+<!-- =====================================================
+     OLD SMART / POP ADS
+     ===================================================== -->
 
 <script
-src="https://pl28546015.effectivegatecpm.com/e7/2f/44/e72f442a55ad8fb0c9a809637b8e7d6a.js">
+  src="https://pl28546015.effectivegatecpm.com/e7/2f/44/e72f442a55ad8fb0c9a809637b8e7d6a.js">
 </script>
 
 
 <script
-src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js">
+  src="https://pl28546010.effectivegatecpm.com/59/6e/6b/596e6bb09d6bc02c41f8d791c595a9bc.js">
 </script>
 
 
-<!-- BOTTOM BANNER -->
+<!-- =====================================================
+     OLD BOTTOM BANNER
+     ===================================================== -->
 
 <script>
 
@@ -855,8 +960,22 @@ atOptions = {
 
 
 <script
-src="//www.effectivegatecpm.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js">
+  src="https://www.effectivegatecpm.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js">
 </script>
+
+
+<!-- =====================================================
+     OPTIONAL DIRECT LINK
+     ===================================================== -->
+
+<!--
+  तुम्हारा दिया हुआ EffectiveCPM direct link:
+
+  https://www.effectivecpmnetwork.com/fq27qqmw?key=e98fbb44e6504827f657a7c0d6492800
+
+  इसे automatic redirect में नहीं लगाया है।
+  इससे user की normal YouTube button functionality disturb नहीं होगी।
+-->
 
 
 <!-- =====================================================
@@ -866,11 +985,6 @@ src="//www.effectivegatecpm.com/bc6f229e12f49163778a5da597aeb6b8/invoke.js">
 <script>
 
 function openYouTube(){
-
-  /*
-    Direct YouTube Web
-    New browser tab
-  */
 
   window.open(
     "https://www.youtube.com/",
